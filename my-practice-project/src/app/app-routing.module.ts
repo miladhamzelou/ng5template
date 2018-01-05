@@ -1,4 +1,5 @@
-import { Auth2Guard } from './guards/auth2.guard';
+import { AuthChildGuard } from './guards/auth-child.guard';
+
 import { UnauthorisedComponent } from './components/errors/unauthorised/unauthorised.component';
 import { AuthGuard } from './guards/auth.guard';
 import { DetailsComponent } from './components/main/user-detail/details/details.component';
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path:'main', 
     component: MainComponent,
     canActivate: [AuthGuard],
-    // canActivateChild: [Auth2Guard],
+    canActivateChild: [AuthChildGuard],
     children: [
       { path: 'dashboard',
         component: DashboardComponent },

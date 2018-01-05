@@ -1,3 +1,4 @@
+import { AuthChildGuard } from './guards/auth-child.guard';
 import { FormValidationsService } from './services/form-validations.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -71,10 +72,12 @@ import { DetailsComponent } from './components/main/user-detail/details/details.
     HomeService,
     FormValidationsService,
     UserService,
-    AuthGuard
+    AuthGuard,
+    AuthChildGuard
   ],
   bootstrap: [
     AppComponent
   ]
 })
 export class AppModule { }
+// https://github.com/flauc/angular2-notifications
