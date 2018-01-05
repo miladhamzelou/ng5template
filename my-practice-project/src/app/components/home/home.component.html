@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-4">
+            <form class="mt-4 form-inline" [formGroup]="myform">
+                <div class="form-group m-2">
+                    <input type="text" 
+                        class="form-control" 
+                        id="indes" 
+                        placeholder="Enter Description *" 
+                        formControlName="desc" 
+                        [ngClass]="{'req':myform.controls.desc.invalid && myform.controls.desc.touched}"
+                        (keyup)="pres(myform.controls.desc.value)">
+                </div>
+                <div class="form-group m-2">
+                    <input type="date" class="form-control" id="indate" formControlName="date">
+                </div>
+                <div class="form-group m-2">
+                    <button (click)="addTodo()" class="btn btn-primary" [disabled]="myform.invalid">Add</button>
+                </div>
+            </form>
+            <form  #f="ngForm" novalidate *ngIf="todos.length > 0">
+                <input name="srch" ngModel required #srch="ngModel" (keyup)="pres(f.value.srch)" placeholder="Search Here" class="p-2">
+                <!-- in {{search}} -->
+            </form>
+            <!-- out {{search}} -->
+            <ul>
+                <li *ngFor="let todo of todos; let i = index">
+                    <p>{{todo.desc}} <span class="font-weight-bold cursor x" (click)="removeTodo(i)">X</span></p>
+                    <p class="font-italic text-right">{{todo.date | date: 'fullDate'}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

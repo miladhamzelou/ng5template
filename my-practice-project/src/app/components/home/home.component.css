@@ -1,0 +1,24 @@
+ul{
+    -webkit-padding-start: 0px;
+}
+li{
+    margin: 15px auto;
+    border-bottom: 1px solid #ded0d0;
+}
+li:last-child{
+    border-bottom: none;
+}
+.font-italic{
+    font-size: 12px;
+}
+.x{
+    position: absolute;
+    right: 0;
+}
+.req{
+    border-color: red;
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0,.25);
+}
+button:disabled{
+    cursor: not-allowed;
+}

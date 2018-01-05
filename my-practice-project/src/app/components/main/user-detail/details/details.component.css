@@ -1,0 +1,12 @@
+
+ul>li:nth-child(even){
+    background-color: #eee;
+}
+
+ul>li p:first-child{
+    font-weight: 600;
+}
+ul>li p{
+    margin-top: 1rem;
+    letter-spacing: 1px;
+}

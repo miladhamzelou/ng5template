@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row main-row">
+    <div class="col-md-6 offset-md-3 text-center m-auto">
+      <form [formGroup]="registerForm">
+        <div formGroupName="name">
+          <div class="form-group my-4 mx-auto">
+            <input 
+                type="text" 
+                class="form-control my-4 mx-auto" 
+                id="firstName" 
+                formControlName="firstName" 
+                placeholder="First Name *">
+            <app-form-errors [control]="registerForm.controls.name.controls.firstName"></app-form-errors>
+          </div>
+          <div class="form-group my-4 mx-auto">
+            <input 
+                type="text" 
+                class="form-control my-4 mx-auto" 
+                id="middleName" 
+                formControlName="middleName" 
+                placeholder="Middle Name">
+            <app-form-errors [control]="registerForm.controls.name.controls.middleName"></app-form-errors>
+          </div>
+          <div class="form-group my-4 mx-auto">
+            <input 
+                type="text" 
+                class="form-control my-4 mx-auto" 
+                id="lastName" 
+                formControlName="lastName" 
+                placeholder="Last Name">
+            <app-form-errors [control]="registerForm.controls.name.controls.lastName"></app-form-errors>
+          </div>
+        </div>
+        <div class="form-group my-4 mx-auto">
+          <input 
+              type="email" 
+              class="form-control my-4 mx-auto" 
+              id="uname" 
+              formControlName="uname" 
+              placeholder="User Name *">
+            <app-form-errors [control]="registerForm.controls.uname"></app-form-errors>
+        </div>
+        <div class="form-group my-4 mx-auto">
+          <input 
+              type="text" 
+              class="form-control my-4 mx-auto" 
+              id="password" 
+              formControlName="password" 
+              placeholder="Password *">
+            <app-form-errors [control]="registerForm.controls.password"></app-form-errors>
+        </div>
+      </form>
+      <p class="r-c text-center" *ngIf="msg != ''">{{msg}}</p> <div class="row"> 
+        <div class="col-md-12 text-center mb-4">
+          <a routerLink="/login">Login</a>
+        </div>
+       </div> 
+      <div class="row">
+        <div class="col-md-6">
+          <button class="btn btn-success button-200" (click)="register()">Register</button>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-default button-200" (click)="reset()">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

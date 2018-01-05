@@ -1,0 +1,55 @@
+.cursor{
+    cursor: pointer;
+}
+.p-c, a:hover{
+    color: #e11246;
+}
+.s-c, a{
+    color: #f84f32;
+}
+.form-control:focus {
+    border-color: #b90065;
+    box-shadow: 0 0 0 0.2rem rgba(183, 0, 97, 0.44);
+}
+.form-control.ng-invalid.ng-touched{
+    border-color: #b90000;
+    box-shadow: 0 0 0 0.2rem rgba(243, 2, 2, 0.25);
+}
+button:disabled{
+    cursor: not-allowed;
+}
+.r-c{
+    color: red;
+    text-transform: capitalize;
+    font-size: 13px;
+}
+ul{
+    -webkit-padding-start: 0px;
+}
+li{
+    list-style: none;
+}
+.button-200{
+    min-width: 200px;
+}
+.btn-success,.btn-success.disabled, .btn-success:disabled {
+    color: #fff;
+    background-color: #e11246;
+    border-color: #cf0c53;
+    transition: all .5 ease-in;
+}
+.btn-success:hover,.btn-success:focus,.btn-success:not([disabled]):not(.disabled):active:focus {
+    color: #e11246;
+    background-color: #fff;
+    border-color: #cf0c53;
+}
+.btn-success.focus, .btn-success:focus {
+    box-shadow: 0 0 0 0.2rem rgba(231, 24, 76, .25);
+}
+button.btn-default:hover,.btn-default:focus{
+    color: buttonface;
+    background-color: buttontext;
+}
+.letter-s1,.r-c{
+    letter-spacing: 1px;
+}

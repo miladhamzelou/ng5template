@@ -1,0 +1,28 @@
+.container{
+    height: 100vh;
+}
+.main-row{
+    position: absolute;
+    top: 0;
+    left: 7%;
+    right: 7%;
+    bottom: 0;
+}
+.main-col{
+    padding-top:70px!important;
+    padding-bottom:70px!important
+}
+img{
+    width: 100%;
+}
+input{
+    width: 70%;
+}
+
+button{
+    margin: 10px;
+}
+
+.border-left{
+    border-left: 1px solid #882b42;
+}
