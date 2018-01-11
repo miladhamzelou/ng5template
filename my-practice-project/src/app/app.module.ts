@@ -20,6 +20,10 @@ import { UnauthorisedComponent } from './components/errors/unauthorised/unauthor
 
 import { HomeService } from './services/home.service';
 import { UserService } from './services/user.service';
+
+import { CookieService } from 'ngx-cookie-service';
+
+
 import { AboutComponent } from './components/about/about.component';
 import { MyfilterPipe } from './pipes/myfilter.pipe';
 import { LoginComponent } from './components/login/login.component';
@@ -71,6 +75,7 @@ import { DetailsComponent } from './components/main/user-detail/details/details.
   providers: [
     HomeService,
     FormValidationsService,
+    CookieService,
     UserService,
     // AuthGuard,
     AuthChildGuard
