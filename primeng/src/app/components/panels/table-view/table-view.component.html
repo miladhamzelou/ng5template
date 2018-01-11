@@ -1,0 +1,42 @@
+<!-- https://www.primefaces.org/primeng/#/tabview -->
+<p-tabView [controlClose]="false" >
+    <p-tabPanel header="Right Icon" rightIcon="fa-bookmark-o">
+       Content 1
+    </p-tabPanel>
+    <p-tabPanel header="Left Icon" leftIcon="fa-bell-o">
+        Content 2
+    </p-tabPanel>
+    <p-tabPanel header="Closable" [closable]="true">
+        Content 3    
+    </p-tabPanel>
+    <p-tabPanel header="Selected & disabled" [selected]="true" [disabled]="true">
+      Content Diasbled is selected
+    </p-tabPanel>
+    <p-tabPanel header="lazy load content">
+        <ng-template pTemplate="content">
+            Complex Content to Lazy Load
+        </ng-template>
+    </p-tabPanel>
+</p-tabView>
+<p-tabView orientation="right" [controlClose]="true" >
+    <p-tabPanel header="Header 1">
+       Content 1
+    </p-tabPanel>
+    <p-tabPanel header="Header 2" [selected]="true">
+        Content 2
+    </p-tabPanel>
+    <p-tabPanel header="Header 3" [closable]="true">
+        Content 3    
+    </p-tabPanel>
+</p-tabView>
+<p-tabView orientation="left">
+    <p-tabPanel header="Header 1">
+       Content 1
+    </p-tabPanel>
+    <p-tabPanel header="Header 2" [selected]="true">
+        Content 2
+    </p-tabPanel>
+    <p-tabPanel header="Header 3" [closable]="true">
+        Content 3    
+    </p-tabPanel>
+</p-tabView>

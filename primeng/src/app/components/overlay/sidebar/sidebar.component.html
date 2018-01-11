@@ -1,0 +1,47 @@
+<!-- https://www.primefaces.org/primeng/#/sidebar -->
+<p-sidebar [(visible)]="display">
+    Content
+</p-sidebar>
+
+<button type="text" (click)="display = true" pButton icon="fa-external-link-square" label="Show"></button>
+
+
+<button type="text" (click)="display2 = !display2" pButton icon="fa-external-link-square" label="10em"></button>
+<p-sidebar [(visible)]="display2" [ngStyle]="{width:'10em'}"></p-sidebar>
+
+<button type="text" (click)="displaysm = !displaysm" pButton icon="fa-external-link-square" label="sm"></button>
+<p-sidebar [(visible)]="displaysm" styleClass="ui-sidebar-sm"></p-sidebar>
+
+<button type="text" (click)="displaymd = !displaymd" pButton icon="fa-external-link-square" label="md"></button>
+<p-sidebar [(visible)]="displaymd" styleClass="ui-sidebar-md"></p-sidebar>
+
+<button type="text" (click)="displaylg = !displaylg" pButton icon="fa-external-link-square" label="lg"></button>
+<p-sidebar [(visible)]="displaylg" styleClass="ui-sidebar-lg"></p-sidebar>
+
+<br>
+<br>
+<!-- form right -->
+<button type="text" (click)="displayright = !displayright" pButton icon="fa-external-link-square" label="right"></button>
+<p-sidebar [(visible)]="displayright" position="right">
+    Content
+</p-sidebar>
+
+<!-- from bottom -->
+<button type="text" (click)="displaybottom = !displaybottom" pButton icon="fa-external-link-square" label="bottom"></button>
+<p-sidebar [(visible)]="displaybottom" position="bottom">
+    Content
+</p-sidebar>
+
+<!-- form top -->
+<button type="text" (click)="displaytop = !displaytop" pButton icon="fa-external-link-square" label="top"></button>
+<p-sidebar [(visible)]="displaytop" position="top">
+    Content
+</p-sidebar>
+
+<br><br>
+
+<!-- fullScreen -->
+<button type="text" (click)="displayfull = !displayfull" pButton icon="fa-external-link-square" label="fullscreen"></button>
+<p-sidebar [(visible)]="displayfull" [fullScreen]="true">
+  Full screen Content
+</p-sidebar>

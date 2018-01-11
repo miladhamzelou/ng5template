@@ -1,0 +1,10 @@
+<!-- https://www.primefaces.org/primeng/#/menu -->
+<p>Popup</p>
+<p-menu #menu popup="popup" [model]="items"></p-menu>
+<button type="button" pButton icon="fa fa-list" label="Show" (click)="menu.toggle($event)">Popup</button>
+
+<br>
+<div style="height:200px;"></div>
+<p>Fixed</p>
+<p-menu [model]="items"></p-menu> 
+

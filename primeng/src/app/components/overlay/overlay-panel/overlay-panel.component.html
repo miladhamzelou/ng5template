@@ -1,0 +1,25 @@
+<!-- https://www.primefaces.org/primeng/#/overlaypanel -->
+<p-overlayPanel #op>
+    <p>asdasdasD</p>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+</p-overlayPanel>
+
+<button type="text" pButton label="Basic" (click)="op.toggle($event)"></button>
+
+<p-overlayPanel #op2 [dismissable]="true" [showCloseIcon]="true">
+    Content
+    <p>asdasdasD</p>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+</p-overlayPanel>
+
+<button type="text" pButton label="Custom Target" (click)="op2.show($event, actualTarget)"></button>
+<br>
+<div #actualTarget></div>

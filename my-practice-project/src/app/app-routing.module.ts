@@ -1,7 +1,7 @@
 import { AuthChildGuard } from './guards/auth-child.guard';
 
 import { UnauthorisedComponent } from './components/errors/unauthorised/unauthorised.component';
-import { AuthGuard } from './guards/auth.guard';
+// import { AuthGuard } from './guards/auth.guard';
 import { DetailsComponent } from './components/main/user-detail/details/details.component';
 import { TrackOrderComponent } from './components/main/user-detail/track-order/track-order.component';
 import { OrdersComponent } from './components/main/user-detail/orders/orders.component';
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path:'about', component: AboutComponent },
   { path:'main', 
     component: MainComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     canActivateChild: [AuthChildGuard],
     children: [
       { path: 'dashboard',
@@ -48,6 +48,7 @@ const routes: Routes = [
   { path:'login', component: LoginComponent },
   { path:'register', component: RegisterComponent },
   { path:'unauthorised', component: UnauthorisedComponent },
+  { path:'lazy', loadChildren: './lazy.module#LazyModule' },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

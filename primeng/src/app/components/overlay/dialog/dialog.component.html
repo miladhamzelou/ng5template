@@ -1,0 +1,34 @@
+<!-- https://www.primefaces.org/primeng/#/dialog -->
+<p-dialog header="Title" [(visible)]="display" [width]="300" >
+     <p-header>
+        Header content here
+    </p-header>
+    Content
+    <p-footer>
+        //buttons
+    </p-footer>
+</p-dialog>
+
+<button type="text" (click)="display = !display" pButton icon="fa-external-link-square" label="Show"></button>
+
+
+<p-dialog appendTo="body" [contentStyle]="{'overflow':'visible'}" [(visible)]="display1">
+    <!-- <p-dropdown appendTo="body"></p-dropdown> -->
+</p-dialog>
+<button type="text" (click)="display1 = !display1" pButton icon="fa-external-link-square" label="overflow and appendto body"></button>
+
+
+<!-- text right to left -->
+<button type="text" (click)="display2 = !display2" pButton icon="fa-external-link-square" label="RTL"></button>
+<div class="ui-rtl" dir="rtl">
+    <p-dialog [(visible)]="display2">
+        <p-header>
+            Header content here
+        </p-header>
+        Content
+        <p-footer>
+            Footer content here
+        </p-footer>
+    </p-dialog>
+</div>
+  

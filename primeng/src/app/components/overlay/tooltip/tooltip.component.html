@@ -1,0 +1,21 @@
+<!-- https://www.primefaces.org/primeng/#/tooltip -->
+<p>Defaults</p>
+<!-- Default  -->
+<input type="text" pTooltip="Enter your username">
+<!-- top -->
+<input type="text" pTooltip="Enter your username" tooltipPosition="top">
+<!-- bottom -->
+<input type="text" pTooltip="Enter your username" tooltipPosition="bottom">
+<!-- left -->
+<input type="text" pTooltip="Enter your username" tooltipPosition="left">
+<!-- right -->
+<input type="text" pTooltip="Enter your username" tooltipPosition="right">
+<!-- on focus -->
+<p>On focus</p>
+<input type="text" pTooltip="Enter your username" tooltipPosition="top" tooltipEvent="focus">
+<p>With Delay</p>
+<input type="text" pTooltip="Enter your username" tooltipPosition="top" tooltipEvent="focus" showDelay="1000" hideDelay="500">
+<p>Scrolling Containers</p>
+<div #container style="display:inline-block;position:relative">
+    <input type="text" pInputText pTooltip="Enter your username" placeholder="Right" [appendTo]="container">
+</div>

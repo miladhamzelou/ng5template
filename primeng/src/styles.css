@@ -1,0 +1,12 @@
+@import url('./assets/css/font-awesome.min.css');
+@import '~primeng/resources/themes/omega/theme.css';
+@import '~primeng/resources/primeng.min.css';
+
+a{
+    padding: 0 15px;
+    display: inline-block;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}

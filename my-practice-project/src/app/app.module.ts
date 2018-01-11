@@ -16,7 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/errors/page-not-found/page-not-found.component';
 import { UnauthorisedComponent } from './components/errors/unauthorised/unauthorised.component';
 
-import { AuthGuard } from './guards/auth.guard';
+// import { AuthGuard } from './guards/auth.guard';
 
 import { HomeService } from './services/home.service';
 import { UserService } from './services/user.service';
@@ -72,7 +72,7 @@ import { DetailsComponent } from './components/main/user-detail/details/details.
     HomeService,
     FormValidationsService,
     UserService,
-    AuthGuard,
+    // AuthGuard,
     AuthChildGuard
   ],
   bootstrap: [

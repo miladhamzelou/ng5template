@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
         let user = { uname: this.loginForm.controls.uname.value };
         sessionStorage.setItem("test", JSON.stringify(user));
         this.reset();
+        // this.router.navigate([{outlets: {popup: ['main']}}]);        
         this.router.navigate(['main']);
       }
       else this.msg = res['msg'];

@@ -14,7 +14,6 @@ router.route('/login')
 async function register(req, res) {
   if (req.body) {
     var isFound = await checkUser(req.body.uname);
-    console.log(isFound)
     if (isFound) return res.json({ "success": false, "msg": req.body.uname + " is already present" });
     else if (isFound != undefined) {
       var user = new userCollection({
@@ -39,7 +38,6 @@ async function register(req, res) {
 
 function changePassword(req, res) {
   if (req.body) {
-    console.log(req.body)
     loginCollection.findOneAndUpdate({
       $and: [
         { "username": req.body.username },
@@ -61,7 +59,6 @@ function changePassword(req, res) {
 function getUser(req, res) {
   if (req.query) {
     userCollection.findOne({ "uname": req.query.uname }).exec(function (err, user) {
-
       if (err) return res.status(500).send(err);
       if (user) res.send({ "success": true, "data": user });
       else res.send({ "success": false, "msg": "User Detail not available" });

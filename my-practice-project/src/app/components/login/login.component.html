@@ -14,14 +14,15 @@
         </div>
       </form>
       <p class="text-center r-c" *ngIf="msg != ''">{{msg}}</p>
-       <div class="row"> 
+      <div class="row"> 
         <div class="col-md-6 text-center mb-2">
           <a routerLink="/register">Register</a>
         </div>
         <div class="col-md-6 text-center border-left mb-2">
           <a routerLink="/forget-password" class="">Forget Password</a>
+          <a [routerLink]="['/lazy']" class="">Lazy</a>
         </div>
-       </div> 
+      </div> 
       <div class="text-center">
         <button (click)="login()" [disabled]="loginForm.invalid" class="btn btn-success button-200">LOGIN</button>
         <button (click)="reset()" class="btn btn-default button-200">Reset</button>
