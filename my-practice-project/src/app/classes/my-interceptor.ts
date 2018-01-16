@@ -2,8 +2,8 @@ import { Injectable, Injector } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs/Rx';
-import 'rxjs/add/observable/throw'
-import 'rxjs/add/operator/catch';
+
+@Injectable()
 export class MyInterceptor implements HttpInterceptor {
     constructor(private cookieService: CookieService){}
 
@@ -11,9 +11,16 @@ export class MyInterceptor implements HttpInterceptor {
         console.log("intercepted request ... ");
 
         // Clone the request to add the new header.
-        const authReq = req.clone({ headers: req.headers.set("authorization", this.cookieService.get('testing')) });
+        const authReq = req.clone({ headers: req.headers.set('Authorization', `Bearer ${this.cookieService.get('testing') }`)});
 
-        console.log("Sending request with new header now ...");
+        console.log("Sending request with new header now ...",authReq);
+
+        // request = request.clone({
+        //       setHeaders: {
+        //         Authorization: `Bearer ${this.auth.getToken()}`
+        //       }
+        //     });
+
 
         //send the newly created request
         return next.handle(authReq)

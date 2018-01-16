@@ -1,10 +1,11 @@
 var express = require('express');
 var loginCollection = require('../models/login');
 var userCollection = require('../models/user');
+var jwtToken = require('./jwt')
 var router = express.Router();
 
 router.route('/')
-  .get(getUser)
+  .get(jwtToken.verify, getUser)
   .post(register);
 
 router.route('/login')
@@ -57,6 +58,7 @@ function changePassword(req, res) {
 }
 
 function getUser(req, res) {
+  // console.log('req.headers',req.headers)
   if (req.query) {
     userCollection.findOne({ "uname": req.query.uname }).exec(function (err, user) {
       if (err) return res.status(500).send(err);
@@ -76,30 +78,41 @@ function checkUser(uname, res) {
 }
 
 async function login(req, res) {
+  console.log(req.headers)
   if (req.body.uname && req.body.password) {
     var isFound = await findUserByUsernameAndPassword(req.body);
+    console.log('isFound', isFound)
     if (!isFound.success && isFound.err) return res.status(500).send(err);
     else if (!isFound.success) res.json({ "success": false, "msg": "Please Check Username and Password" });
-    else res.json({ "success": true });
+    else {
+      let token = jwtToken.generateToken(isFound.data._id);
+      let userData = {
+        email: isFound.data.uname,
+        token: token
+      };
+      res.json({ "success": true, "data": userData });
+    }
   }
 }
 
-function findUserByUsernameAndPassword(data) {
-  return new Promise(function (resolve, reject) {
-    loginCollection.findOne({
-      $and: [
-        { "username": data.username },
-        { "password": data.password },
-        { "status": "a" }
-      ]
-    }).exec(function (err, user) {
-      if (err) resolve({ "success": false, "err": err });
-      if (user) resolve({ "success": true, "data": user });
-      else resolve({ "success": false });
+  function findUserByUsernameAndPassword(data) {
+    return new Promise(function (resolve, reject) {
+      loginCollection.findOne({
+        $and: [
+          { "username": data.username },
+          { "password": data.password },
+          { "status": "a" }
+        ]
+      }).exec(function (err, user) {
+        if (err) resolve({ "success": false, "err": err });
+        if (user) {
+          resolve({ "success": true, "data": user });
+        }
+        else resolve({ "success": false });
+      });
     });
-  });
-}
+  }
 
 
 
-module.exports = router;
+  module.exports = router;

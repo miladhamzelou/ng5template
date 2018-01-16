@@ -1,10 +1,11 @@
+import { MyInterceptor } from './classes/my-interceptor';
 import { AuthChildGuard } from './guards/auth-child.guard';
 import { FormValidationsService } from './services/form-validations.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -73,6 +74,11 @@ import { DetailsComponent } from './components/main/user-detail/details/details.
     HttpClientModule
   ],
   providers: [
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: MyInterceptor,
+        multi: true
+    },
     HomeService,
     FormValidationsService,
     CookieService,
